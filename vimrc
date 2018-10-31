@@ -38,4 +38,8 @@ set laststatus=2
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMapActivateNode='<right>'
-
+" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,  PrettierAsync"
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1"
