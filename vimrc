@@ -1,25 +1,14 @@
 execute pathogen#infect()
 
+filetype on
+syntax on
 syntax enable
 " defaults
 set number
 set showmatch
 set backspace=indent,eol,start
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>OO
 filetype indent on
+filetype plugin on
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -46,7 +35,7 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_cache_executable_check_failures = 1
+"let g:ale_cache_executable_check_failures = 1
 " commandT
   if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTCancelMap = ['<ESC>', '<C-c>']
@@ -59,15 +48,22 @@ map <C-o> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMapActivateNode='<right>'
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1"
+let g:ycm_autoclose_preview_window_after_completion=1
 " IndentLine
 let g:indentLine_color_term = 239
 " Delphinus
 let g:lightline_delphinus_use_powerline_glyphs = 1
 let g:lightline_delphinus_colorscheme = "nord_improved"
+" Nerd Commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 " Nord
 set termguicolors
 let g:nord_underline = 1
-let g:nord_comment_brightness = 15
+let g:nord_comment_brightness = 20
 let g:nord_cursor_line_number_background = 1
 colorscheme nord
